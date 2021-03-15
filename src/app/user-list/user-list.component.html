@@ -1,4 +1,5 @@
 <app-user-list-view
   [users]="users$ | async"
+  [totalUserCount]="totalUserCount$ | async"
   (getUsers$)="getUsers($event)"
 ></app-user-list-view>

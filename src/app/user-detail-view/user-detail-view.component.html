@@ -1,1 +1,40 @@
-<p>user-detail-view works!</p>
+<mat-card class="user-detail-card">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      [ngStyle]="{
+        'background-image': 'url(' + user?.avatar_url + ')',
+        'background-size': 'cover'
+      }"
+    ></div>
+    <mat-card-title>{{ user?.login }}</mat-card-title>
+  </mat-card-header>
+  <!-- <img
+    mat-card-image
+    [src]="user?.avatar_url"
+    alt="user avatar"
+    width="20%"
+    height="20%"
+  /> -->
+  <mat-card-content class="user-detail-card__content">
+    <a
+      [href]="'https://github.com/' + user?.login"
+      target="_blank"
+      class="user-detail-card__content--user-profile"
+      >{{ "https://github.com/" + user?.login }}</a
+    >
+    <div class="user-detail-card__content--followers">
+      <span matBadge="{{ user?.followers }}"  matBadgeOverlap="false" matBadgeSize="medium"
+        >Followers</span
+      >
+    </div>
+    <div class="user-detail-card__content--following">
+      <span matBadge="{{ user?.following }}" matBadgeOverlap="false" matBadgeSize="medium"
+        >Following</span
+      >
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="onBack()">Back</button>
+  </mat-card-actions>
+</mat-card>

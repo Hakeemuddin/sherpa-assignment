@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserModel } from '../user.model';
 
 @Component({
   selector: 'app-user-detail-view',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-detail-view.component.scss']
 })
 export class UserDetailViewComponent implements OnInit {
-
-  constructor() { }
+  @Input() user: UserModel;
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onBack() {
+    this._router.navigate(['../']);
   }
 
 }

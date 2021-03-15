@@ -1,0 +1,29 @@
+.user-detail-card {
+  margin: 2rem;
+  mat-card-header {
+    align-items: center;
+  }
+  &__content {
+    &--user-profile {
+      word-break: break-all;
+      margin-top: 1.5rem;
+    }
+    &--followers {
+      margin-top: 2rem;
+    }
+    &--following {
+      margin-top: 2rem;
+    }
+  }
+  .mat-badge-content {
+    width: auto;
+    display: grid;
+    min-width: 2rem;
+    min-height: 2.2rem;
+    text-align: center;
+    align-items: center;
+    padding: 5px 3px;
+    top: -2.2rem;
+    right: -2.2rem;
+}
+}

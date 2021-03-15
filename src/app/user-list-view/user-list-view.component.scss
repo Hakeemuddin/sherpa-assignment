@@ -1,0 +1,36 @@
+.users-card-container {
+  margin: 2rem;
+  &__content {
+    &--grid {
+      display: grid;
+      grid-gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    &--grid app-user-card {
+      width: 100%;
+      height: 100%;
+
+      padding: 0.5em;
+    }
+  }
+}
+
+/* display a 2-column grid >768 */
+@media only screen and (max-width: 768px) {
+    .users-card-container {
+        margin: 2rem;
+        &__content {
+          &--grid {
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+          }
+      
+         
+        }
+      }
+  }
+  

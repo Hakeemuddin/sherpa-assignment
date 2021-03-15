@@ -1,0 +1,10 @@
+.user-card {
+  cursor: pointer;
+  mat-card-header {
+    align-items: center;
+  }
+  a {
+      word-break: break-all;
+      margin-top: 20px;
+  }
+}

@@ -12,6 +12,8 @@ import {MatCardModule} from '@angular/material/card';
 import { UserCardComponent } from './user-card/user-card.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     NoopAnimationsModule,
     MatCardModule,
     MatPaginatorModule,
-    HttpClientModule
+    MatBadgeModule,
+    HttpClientModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserModel } from '../user.model';
 
 @Component({
@@ -7,10 +8,16 @@ import { UserModel } from '../user.model';
   styleUrls: ['./user-card.component.scss']
 })
 export class UserCardComponent implements OnInit {
-  user: UserModel;
-  constructor() { }
+  @Input() user: UserModel;
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
   }
+
+  openDetails(){
+    this._router.navigate(['details', this.user?.login])
+  }
+
+
 
 }
