@@ -25,7 +25,7 @@ export class UserManagementService {
   getUsersCount() {
     const queryParams = new HttpParams();
     queryParams.set("type", "user");
-    const url = 'http://api.github.com/search/users?q=type%3Auser'
+    const url = 'https://api.github.com/search/users?q=type%3Auser'
     return this.httpClient
       .get<any>(url)
       .pipe(map((users) => users?.total_count));
