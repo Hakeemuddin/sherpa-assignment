@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/sherpa-assignment",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
