@@ -1,0 +1,4 @@
+<app-user-list-view
+  [users]="users$ | async"
+  (getUsers$)="getUsers($event)"
+></app-user-list-view>
