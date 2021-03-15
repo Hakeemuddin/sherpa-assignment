@@ -4,16 +4,32 @@
     align-items: center;
   }
   &__content {
-    &--user-profile {
+    &--user-name {
+      display: flex;
+      justify-content: center;
       word-break: break-all;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+    }
+    &--user-profile {
+      display: flex;
+      justify-content: center;
+      word-break: break-all;
+      margin-top: 2rem;
     }
     &--followers {
+      display: flex;
+      justify-content: center;
       margin-top: 2rem;
     }
     &--following {
+      display: flex;
+      justify-content: center;
       margin-top: 2rem;
     }
+  }
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
   }
   .mat-badge-content {
     width: auto;
@@ -25,5 +41,5 @@
     padding: 5px 3px;
     top: -2.2rem;
     right: -2.2rem;
-}
+  }
 }

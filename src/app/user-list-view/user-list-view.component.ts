@@ -15,11 +15,13 @@ export class UserListViewComponent implements OnInit {
     userId: number;
     per_page: number;
   }>();
-  lastPageUserId: number;
-  lastPageUsers: UserModel[];
+
+  queryParams: { userId: number; per_page: number; };
+  previousUserIdMap: Map<number, number> = new Map();
   constructor() {}
 
   ngOnInit(): void {
+    this.queryParams = { userId: 0, per_page: 9 };
     this.onPageChange({
       pageIndex: 1,
       previousPageIndex: 1,
@@ -29,17 +31,15 @@ export class UserListViewComponent implements OnInit {
   }
 
   onPageChange(pageEvent: PageEvent) {
-    const queryParam = { userId: 0, per_page: 9, previous_userId: 0 };
-    this.lastPageUserId = this.users? this.users[0]?.id : 1;
-    console.log(this.lastPageUserId);
-    console.log(pageEvent);
+   
     if (pageEvent?.pageIndex > pageEvent?.previousPageIndex) {
-      queryParam.previous_userId = queryParam.userId;
-      queryParam.userId = this.users[this.users.length - 1].id;
+      this.previousUserIdMap.set(pageEvent?.previousPageIndex, this.queryParams.userId);
+      this.queryParams.userId = this.users[this.users.length - 1].id;
     } else {
-      queryParam.userId =  queryParam.previous_userId;
+      this.queryParams.userId = this.previousUserIdMap.get(pageEvent?.pageIndex) ?? 0;
+     
     }
-    console.log(queryParam);
-    this.getUsers$.emit(queryParam);
+   
+    this.getUsers$.emit(this.queryParams);
   }
 }

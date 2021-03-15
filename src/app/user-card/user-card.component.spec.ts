@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+
 import { UserCardComponent } from './user-card.component';
 
 describe('UserCardComponent', () => {
@@ -22,4 +23,9 @@ describe('UserCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have user', () => {
+    expect(component.user).toBeTruthy();
+  });
+
 });
